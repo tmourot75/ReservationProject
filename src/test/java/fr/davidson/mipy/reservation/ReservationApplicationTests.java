@@ -5,6 +5,7 @@ import fr.davidson.mipy.reservation.repositories.RoomRepositoryInterface;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -30,18 +31,22 @@ class ReservationApplicationTests {
 	}
 
 	@Test
+	@Transactional
 	public void testFindProduit() {
 		Room room = roomRepository.findById(4L).get();
 		System.out.println(room);
 	}
 
 	@Test
+	@Transactional
 	public void listAllRooms() {
 		List<Room> rooms = roomRepository.findAll();
 		for (Room room: rooms) {
 			System.out.println(room);
 		}
 	}
+
+
 
 
 

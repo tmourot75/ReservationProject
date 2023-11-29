@@ -59,8 +59,7 @@ public class RoomServiceImpl implements RoomServiceInterface {
     @Override
     public RoomDto convertEntityToDto(Room room) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        RoomDto roomDto = modelMapper.map(room, RoomDto.class);
-        return  roomDto;
+        return modelMapper.map(room, RoomDto.class);
     }
 
     @Override

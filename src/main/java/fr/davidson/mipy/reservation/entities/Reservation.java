@@ -1,8 +1,6 @@
 package fr.davidson.mipy.reservation.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +14,14 @@ import java.util.Date;
 public class Reservation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservationId;
     private Date startDate;
     private Date endDate;
     private String description;
+
+    @ManyToOne
+    private Room room;
+
 
 }

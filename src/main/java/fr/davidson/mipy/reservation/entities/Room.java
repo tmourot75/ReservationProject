@@ -21,8 +21,9 @@ public class Room {
     private String roomDescription;
     private boolean reserved;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "room")
-    private List<Reservation>[] reservations;
+    private List<Reservation> reservations;
 
     public Room(String name, String description, boolean reserved) {
         super();

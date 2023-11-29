@@ -15,4 +15,5 @@ public class ReservationDto {
     private Date startDate;
     private Date endDate;
     private String description;
+
 }

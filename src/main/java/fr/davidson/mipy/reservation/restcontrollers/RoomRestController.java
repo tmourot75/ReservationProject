@@ -4,13 +4,12 @@ import fr.davidson.mipy.reservation.dto.RoomDto;
 import fr.davidson.mipy.reservation.entities.Room;
 import fr.davidson.mipy.reservation.services.RoomServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/room")
 @CrossOrigin
 public class RoomRestController {
 
