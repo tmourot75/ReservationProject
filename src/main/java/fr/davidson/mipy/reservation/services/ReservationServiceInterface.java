@@ -8,11 +8,11 @@ import java.util.List;
 public interface ReservationServiceInterface {
 
     List<ReservationDto> getAllReservations();
-
     ReservationDto getReservation(Long id);
-
+    void deleteReservationbyId(Long id);
+    ReservationDto saveReservation(ReservationDto reservationDto);
+    ReservationDto updateReservation(ReservationDto reservationDto);
     ReservationDto convertEntityToDto(Reservation reservation);
-
     Reservation convertDtoToEntity(ReservationDto reservationDto);
 
 }

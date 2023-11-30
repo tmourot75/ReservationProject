@@ -1,5 +1,6 @@
 package fr.davidson.mipy.reservation.dto;
 
+import fr.davidson.mipy.reservation.entities.Room;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +16,6 @@ public class ReservationDto {
     private Date startDate;
     private Date endDate;
     private String description;
+    private Room room;
 
 }

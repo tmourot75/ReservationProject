@@ -20,7 +20,6 @@ public class RoomRestController {
     public List<RoomDto> getAllRooms() {
         return roomService.getAllRooms();
     }
-
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public RoomDto getRoomById(@PathVariable("id") Long id) {
         return roomService.getRoom(id);
@@ -29,20 +28,16 @@ public class RoomRestController {
     public RoomDto saveRoom(@RequestBody RoomDto roomDto) {
         return roomService.saveRoom(roomDto);
     }
-
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteRoomById(@PathVariable("id") Long id) {
         roomService.deleteRoomById(id);
     }
-
-    @RequestMapping(value = "roomsByName/{name}", method = RequestMethod.GET)
-    public List<Room> findByNameRoomContains(@PathVariable("name") String name) {
-        return roomService.findByNameRoomContains(name);
-    }
-
     @RequestMapping(method = RequestMethod.PUT)
     public RoomDto updateRoom(@RequestBody RoomDto roomDto) {
         return roomService.updateRoom(roomDto);
     }
-
+    @RequestMapping(value = "roomsByName/{name}", method = RequestMethod.GET)
+    public List<Room> findByNameRoomContains(@PathVariable("name") String name) {
+        return roomService.findByNameRoomContains(name);
+    }
 }

@@ -25,12 +25,22 @@ public class ReservationServiceImpl implements ReservationServiceInterface {
                 .map(this::convertEntityToDto)
                 .collect(Collectors.toList());
     }
-
     @Override
     public ReservationDto getReservation(Long id) {
         return convertEntityToDto(reservationRepository.findById(id).get());
     }
-
+    @Override
+    public void deleteReservationbyId(Long id) {
+        reservationRepository.deleteById(id);
+    }
+    @Override
+    public ReservationDto saveReservation(ReservationDto reservationDto) {
+        return convertEntityToDto(reservationRepository.save(convertDtoToEntity(reservationDto)));
+    }
+    @Override
+    public ReservationDto updateReservation(ReservationDto reservationDto) {
+         return convertEntityToDto(reservationRepository.save(convertDtoToEntity(reservationDto)));
+    }
     @Override
     public ReservationDto convertEntityToDto(Reservation reservation) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
