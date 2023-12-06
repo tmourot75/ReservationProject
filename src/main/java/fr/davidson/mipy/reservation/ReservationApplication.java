@@ -19,7 +19,7 @@ public class ReservationApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ReservationApplication.class, args);
-		System.out.println("Appli de réservations running");
+		System.out.println("Application de réservations de salles de réunion running");
 	}
 
 	@Bean
